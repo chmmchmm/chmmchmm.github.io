@@ -1,0 +1,14 @@
+# app-ads.txt — developer website for chmmchmm (iOS apps)
+#
+# 状态：占位文件，还没有任何广告网络的授权行。
+# 规范：IAB Tech Lab "Authorized Sellers for Apps"（app 版；网站展示广告用的是 ads.txt，两者不通用）。
+# 抓取：AdMob 按 App Store listing 里 marketing URL（开发者网站）的 hostname，
+#       抓 https://chmmchmm.github.io/app-ads.txt —— 必须留在这个域名根，不能加子目录。
+# 格式：一行一个授权方，字段为  广告交换域, 发布商ID, 关系类型, [广告交换ID]
+#       关系类型只能写 DIRECT 或 RESELLER；# 之后是注释；UTF-8/ASCII，不要 BOM，不要 HTML 包裹。
+#
+# 接入 AdMob 后，把后台 "App-Ads.txt" 页给出的 personalized snippet 原样贴到下面，形如：
+# google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
+#
+# 注意：本文件目前只有注释、没有有效行，AdMob 后台会显示未找到 publisher ID / Not found，
+#       这是预期的；贴上真实行之后要等 Google 自己来爬（按其节奏，通常几天到一周），不会立刻变绿。

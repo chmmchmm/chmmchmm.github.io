@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<!--
+  DICOM Viewer 支持页（Support）。
+  结构与视觉风格沿用 app0/site/index.html：单文件自包含、内联 <style>、CSS 变量集中在 :root、
+  .wrap / .badge / .card / details / footer 的层级完全一致，站内链接一律相对路径。
+  双语呈现方式（app0 为纯英文，这里按任务要求改为双语）：
+    * <html lang="en"> 为主语言，英文在前；
+    * 中文段落用 <p class="zh" lang="zh-Hans">，紧跟在对应英文之后，左侧竖线区分；
+    * 小节标题里中文用 <span class="zh2" lang="zh-Hans"> 换行显示在英文下方。
+  约束：不引用任何外部 CSS/JS/字体/图片/CDN，不设 Cookie，无统计脚本。
+  占位符：liangsx.168@gmail.com —— 上线前必须替换为真实邮箱（正文 + mailto 链接共 9 处，可用全局替换）。
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DICOM Viewer — Support</title>
+<meta name="description" content="Help and contact for DICOM Viewer: a fully offline DICOM (.dcm) image viewer for iPhone — parsing and display happen on your device only, no uploads, no accounts, no analytics. DICOM 影像（DICOM Viewer）支持页：完全离线的 iPhone DICOM(.dcm) 影像查看器，本地解析与显示，不上传、无账号、无统计。">
+<style>
+:root{--ink:#101a24;--mut:#5b6b78;--accent:#2f7fb8;--accent-ink:#1b5f8c;--line:#dbe4ea;--bg:#f5f8fa;--zh:#3f515e}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+ font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+ -webkit-font-smoothing:antialiased}
+.wrap{max-width:720px;margin:0 auto;padding:40px 20px 72px}
+header{display:flex;align-items:center;gap:12px;margin-bottom:22px}
+/* 图标位：纯 CSS 渐变方块，不引任何图片资源 */
+.badge{width:52px;height:52px;border-radius:13px;background:linear-gradient(160deg,#4fb3d9,#1c5a86);flex:0 0 auto}
+h1{font-size:26px;margin:0;letter-spacing:-.02em}
+.sub{color:var(--mut);font-size:14px;margin-top:2px}
+.lede{font-size:17px;color:#22323d}
+h2{font-size:18px;margin:32px 0 8px;letter-spacing:-.01em;scroll-margin-top:16px}
+p,li{color:#22323d}
+/* 中文对照：紧跟英文，左侧竖线 + 略小字号 */
+.zh{margin:8px 0 0;color:var(--zh);font-size:15px;border-left:3px solid var(--line);padding-left:12px}
+h2 .zh2{display:block;font-size:15px;font-weight:600;color:var(--mut);margin-top:2px}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 20px;margin-top:12px}
+.accent{background:#eaf4fb;border:1px solid #bcd8ec}
+.warn{background:#fff5eb;border:1px solid #f0d3ab}
+.warn .tag{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+ color:#8a3b12;background:#ffe4c7;border-radius:6px;padding:2px 8px;margin-bottom:8px}
+a{color:var(--accent-ink)}
+.btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;
+ padding:11px 18px;border-radius:11px;font-weight:600;margin:6px 8px 0 0}
+.btn.ghost{background:#fff;color:var(--accent-ink);border:1px solid #bcd8ec}
+details{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin-top:10px}
+summary{font-weight:600;cursor:pointer}
+summary .zh2{display:block;font-size:14px;font-weight:600;color:var(--mut);margin-top:2px}
+ol,ul{margin:8px 0;padding-left:20px}
+li{margin:4px 0}
+code{background:#e8eff4;padding:1px 5px;border-radius:5px;font-size:14px;
+ font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;word-break:break-word}
+.toc{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 20px;margin-top:12px;font-size:15px}
+.toc ul{margin:4px 0;padding-left:18px;columns:2;column-gap:24px}
+.toc li{margin:2px 0;break-inside:avoid}
+footer{margin-top:40px;color:var(--mut);font-size:13px;border-top:1px solid var(--line);padding-top:18px}
+footer .zh{border:0;padding-left:0;font-size:13px;color:var(--mut)}
+/* 手机端：标题不挤压图标、目录单列、长代码不溢出 */
+@media (max-width:520px){
+ .wrap{padding:28px 16px 56px}
+ h1{font-size:22px}
+ .lede{font-size:16px}
+ .toc ul{columns:1}
+ .btn{display:block;text-align:center;margin:8px 0 0}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- ===== 页头：App 名 + 平台 + 隐私页相对链接 ===== -->
+<header>
+  <div class="badge" aria-hidden="true"></div>
+  <div>
+    <h1>DICOM Viewer Support</h1>
+    <div class="sub">iPhone · iOS 16.0+ · <a href="privacy/">Privacy Policy</a> / 隐私政策 · <code>com.localdicom.viewer</code></div>
+  </div>
+</header>
+
+<p class="lede">DICOM Viewer opens DICOM&nbsp;(<code>.dcm</code>) medical images on your iPhone. Parsing, decoding and display all happen
+on the device — the app has no backend, never connects to the network, and never uploads or collects anything.</p>
+<p class="zh" lang="zh-Hans">「DICOM 影像」在 iPhone 上打开 DICOM（<code>.dcm</code>）医学影像文件。解析、解码与显示全部在设备本地完成——本 App 没有后端、
+完全不联网，也不会上传或收集任何数据。</p>
+
+<!-- ===== 内容锚点目录（全部为页内相对锚点） ===== -->
+<nav class="toc" aria-label="Contents">
+  <strong>Contents / 目录</strong>
+  <ul>
+    <li><a href="#notice">Not a medical device</a></li>
+    <li><a href="#help">Getting help</a></li>
+    <li><a href="#features">What the app does</a></li>
+    <li><a href="#import">How to import</a></li>
+    <li><a href="#window">Window width / level</a></li>
+    <li><a href="#browse">Slices, frames, zoom</a></li>
+    <li><a href="#tags">DICOM tags</a></li>
+    <li><a href="#export">Export PNG</a></li>
+    <li><a href="#syntax">Transfer syntaxes</a></li>
+    <li><a href="#languages">Languages</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- ===== 合规要点：非医疗器械声明，必须显著 ===== -->
+<h2 id="notice">Important: this app is not a medical device
+  <span class="zh2" lang="zh-Hans">重要：本 App 不是医疗器械</span></h2>
+<div class="card warn">
+  <span class="tag">Read before use / 使用前必读</span>
+  <p><strong>DICOM Viewer is not a medical device and has no clearance, certification or approval from any
+  regulatory authority.</strong> It must not be used for diagnosis, treatment or any clinical decision. It is for
+  learning and self-review only.</p>
+  <ul>
+    <li>Any diagnosis, treatment or clinical decision must be made by a qualified professional using the original
+    images and the formal report.</li>
+    <li>The displayed image may differ from the original data because of decoding, display calibration, or the
+    window width / window level you choose.</li>
+    <li>An exported PNG is an 8-bit display image at the current window settings, not the original diagnostic data.</li>
+  </ul>
+  <p class="zh" lang="zh-Hans"><strong>本 App 不是医疗器械，未取得任何监管机构的许可、认证或批准。</strong>不得用于诊断、治疗或任何临床决策，
+  仅供学习与自查使用。</p>
+  <ul class="zh" lang="zh-Hans">
+    <li>任何诊断、治疗或临床决策都必须由具备资质的医务人员依据原始影像与正式报告做出。</li>
+    <li>显示结果可能因解码、显示校准、窗宽窗位设置而与原始数据存在差异。</li>
+    <li>导出的 PNG 是当前窗宽窗位下的 8 位显示图像，不是原始诊断数据。</li>
+  </ul>
+</div>
+
+<!-- ===== 获取帮助 ===== -->
+<h2 id="help">Getting help <span class="zh2" lang="zh-Hans">获取帮助</span></h2>
+<div class="card accent">
+<p><strong>Contact:</strong> email <a href="mailto:liangsx.168@gmail.com?subject=DICOM%20Viewer%20support">liangsx.168@gmail.com</a>
+and include your iPhone model, iOS version, and what you expected versus what you saw. If a file will not open, tell us
+the <em>Transfer Syntax</em> shown in the tag list — that is usually enough to find the problem. Because the app collects
+nothing, there are no logs to look up; your description (or a screenshot) is what actually unblocks us. Please do not
+attach patient images to the email.</p>
+<p class="zh" lang="zh-Hans"><strong>联系方式：</strong>发邮件到 <a href="mailto:liangsx.168@gmail.com?subject=DICOM%20Viewer%20%E6%94%AF%E6%8C%81">liangsx.168@gmail.com</a>，
+并写清 iPhone 型号、iOS 版本，以及你预期的结果和实际看到的结果。如果某个文件打不开，请把标签表里显示的「传输语法」一起告诉我们，通常凭这一点就能定位问题。
+由于本 App 不收集任何数据，也没有日志可查，你的文字描述（或截图）才是最有帮助的信息。请不要在邮件里附带患者影像。</p>
+</div>
+
+<!-- ===== 功能概览（只写已实现的能力） ===== -->
+<h2 id="features">What the app does <span class="zh2" lang="zh-Hans">这个 App 能做什么</span></h2>
+<div class="card">
+<ul>
+  <li><strong>Local only.</strong> Files are parsed and rendered on the device. There is no network permission, no backend,
+  no account, no ads, no tracking, no analytics.</li>
+  <li><strong>Series grouping.</strong> Imported files are grouped by <em>SeriesInstanceUID</em>, so one study shows up as
+  its series.</li>
+  <li><strong>Multi-frame and multi-layer.</strong> A series can be browsed slice by slice; a multi-frame instance can be
+  stepped frame by frame.</li>
+  <li><strong>Display controls.</strong> Window width / window level, invert, reset, plus pinch-zoom and pan.</li>
+  <li><strong>Full tag table.</strong> All DICOM data elements are listed, with the file’s declared character set decoded
+  (including Chinese, e.g. <code>ISO 2022 IR 58</code> / GB18030).</li>
+  <li><strong>PNG export.</strong> The currently displayed image can be exported through the iOS share sheet.</li>
+  <li><strong>Platform.</strong> iPhone only, iOS 16.0 or later.</li>
+</ul>
+<p class="zh" lang="zh-Hans">
+  <strong>纯本地。</strong>文件在设备本地解析与渲染：没有联网权限、没有后端、没有账号、无广告、无追踪、无统计。<br>
+  <strong>序列归组。</strong>导入的文件按 <em>SeriesInstanceUID</em> 归组成序列。<br>
+  <strong>多帧与多层。</strong>序列可逐层浏览；多帧实例可逐帧翻阅。<br>
+  <strong>显示控制。</strong>窗宽/窗位调节、反色、复位，以及双指缩放与平移。<br>
+  <strong>全部标签。</strong>列出 DICOM 的全部数据元素，并按文件声明的字符集解码（含中文，例如 <code>ISO 2022 IR 58</code> / GB18030）。<br>
+  <strong>导出 PNG。</strong>可通过系统分享面板导出当前显示图像。<br>
+  <strong>平台。</strong>仅支持 iPhone，iOS 16.0 起。
+</p>
+</div>
+
+<!-- ===== 如何导入 ===== -->
+<h2 id="import">How to import <span class="zh2" lang="zh-Hans">如何导入</span></h2>
+<div class="card">
+<ol>
+  <li>Get the <code>.dcm</code> files onto the iPhone first — for example save them from Mail, from a chat app, or from
+  your computer to the <em>Files</em> app. If they came in an archive, unzip it in <em>Files</em> first.</li>
+  <li>In the app, tap the import button in the top bar. The system file picker opens.</li>
+  <li>Select individual <code>.dcm</code> files, or select a folder that contains DICOM files. Everything you pick is
+  <strong>copied</strong> into the app’s own sandbox; the originals in <em>Files</em> are never moved, changed or deleted.</li>
+  <li>The library lists one row per series, with the patient name, series description and frame count read from the file.</li>
+</ol>
+<p>If a file cannot be parsed it is skipped and the app reports how many were skipped. Files that are not DICOM
+(for example a plain <code>.zip</code>, <code>.jpg</code> or <code>.txt</code>) will not open.</p>
+<p class="zh" lang="zh-Hans">
+  1. 先把 <code>.dcm</code> 文件放进 iPhone：例如从邮件、聊天工具保存到「文件」App，或从电脑传到「文件」App。如果是压缩包，先在「文件」App 里解压。<br>
+  2. 在 App 顶部点击导入按钮，打开系统文件选择器。<br>
+  3. 选择若干个 <code>.dcm</code> 文件，或直接选择一个包含 DICOM 的文件夹。所选内容会被<strong>复制</strong>进 App 自己的沙盒；
+  「文件」里的原件不会被移动、修改或删除。<br>
+  4. 图库按序列列出，每行显示从文件里读到的患者姓名、序列描述与帧数。
+</p>
+<p class="zh" lang="zh-Hans">无法解析的文件会被跳过，App 会提示被跳过的数量。非 DICOM 文件（例如 <code>.zip</code>、<code>.jpg</code>、<code>.txt</code>）无法打开。</p>
+</div>
+
+<!-- ===== 窗宽窗位 ===== -->
+<h2 id="window">Window width and level <span class="zh2" lang="zh-Hans">窗宽 / 窗位怎么用</span></h2>
+<div class="card">
+<p>A DICOM pixel is a raw number, so the app maps a slice of those numbers to black-and-white: the
+<strong>window level</strong> is the centre value that lands on mid-grey, and the <strong>window width</strong> is how wide a
+range of values that spread covers. A narrow width gives high contrast (fewer shades, harder edges); a wide width shows
+more tissue at once but looks flatter.</p>
+<ul>
+  <li>The top-left overlay shows the current <code>W</code> (width), <code>L</code> (level) and the displayed range.</li>
+  <li>Tap <strong>Window</strong> in the control bar, then drag on the image: left-right changes the width, up-down changes
+  the level. Values update live.</li>
+  <li>Tap <strong>Pan</strong> to switch the drag to moving the image instead.</li>
+  <li><strong>Invert</strong> flips black and white. <strong>Reset</strong> — in the control bar, and also in the <code>⋯</code> menu —
+  restores the window and the zoom/pan.</li>
+  <li>When a file opens, the app starts from the window values stored inside the file when it has them.</li>
+</ul>
+<p class="zh" lang="zh-Hans">DICOM 像素是原始数值，App 把其中一段数值映射成黑到白：<strong>窗位</strong>决定哪个数值落在中间灰度，
+<strong>窗宽</strong>决定这段映射覆盖多宽的数值范围。窗宽越窄对比度越高（灰阶少、边缘硬）；窗宽越宽同时可见的组织更多，但画面更平。</p>
+<ul class="zh" lang="zh-Hans">
+  <li>画面左上角实时显示当前 <code>W</code>（窗宽）、<code>L</code>（窗位）与显示范围。</li>
+  <li>在控制条点「窗宽窗位」，然后在画面上拖动：左右拖动改窗宽，上下拖动改窗位，数值实时更新。</li>
+  <li>点「平移」后，拖动就变成移动图像。</li>
+  <li>「反色」交换黑白；「复位」在控制条和 <code>⋯</code> 菜单里都有，可恢复窗口设置与缩放平移。</li>
+  <li>如果文件本身带有窗口参数，打开时会以文件里的值作为初始显示。</li>
+</ul>
+</div>
+
+<!-- ===== 多层 / 多帧 / 缩放 ===== -->
+<h2 id="browse">Slices, frames, zoom <span class="zh2" lang="zh-Hans">多层浏览、多帧浏览与缩放</span></h2>
+<div class="card">
+<ul>
+  <li><strong>Slices.</strong> The thumbnail strip at the bottom is the whole series — tap any thumbnail to jump to that
+  layer. The current layer is highlighted.</li>
+  <li><strong>Frames.</strong> If the current instance holds several frames, a slider appears above the strip and the
+  overlay shows <code>Frame n/N</code>; drag the slider to flip frames one by one.</li>
+  <li><strong>Zoom.</strong> Pinch to zoom between 0.5× and 12×. The image is shown with nearest-neighbour scaling, so
+  pixels stay crisp instead of being smoothed.</li>
+  <li><strong>Pan.</strong> Switch to <strong>Pan</strong> mode and drag to move the image; <strong>Reset</strong> puts it back.</li>
+</ul>
+<p class="zh" lang="zh-Hans">
+  <strong>逐层。</strong>底部缩略图条就是整个序列，点任意缩略图即可跳到该层，当前层有描边高亮。<br>
+  <strong>多帧。</strong>当前实例含多帧时，缩略图上方会出现滑杆，左上角显示「帧 n/N」；拖动滑杆即可逐帧翻阅。<br>
+  <strong>缩放。</strong>双指缩放范围 0.5×–12×，采用最近邻放大，保持像素锐利而不是糊成一片。<br>
+  <strong>平移。</strong>切到「平移」模式后拖动即可移动图像，「复位」可还原。
+</p>
+</div>
+
+<!-- ===== 标签表 ===== -->
+<h2 id="tags">DICOM tags <span class="zh2" lang="zh-Hans">查看 DICOM 数据元素（标签表）</span></h2>
+<div class="card">
+<p>Open the <code>⋯</code> menu and tap <strong>DICOM Tags</strong>. Key information (patient name and ID, study date,
+modality, body part, transfer syntax, dimensions, bit depth, rescale, window) is shown first; below it you can expand the
+full list of data elements in the file, including sequences and their item counts.</p>
+<p>Text is decoded with the character set declared inside the file, so Chinese names and descriptions from Chinese
+hospital equipment display correctly. <strong>Nothing inside the file is ever translated</strong> — patient names, series
+descriptions and every other value are shown exactly as recorded. Translating medical data would change its meaning.</p>
+<p class="zh" lang="zh-Hans">点右上角 <code>⋯</code> 菜单里的「DICOM 标签」即可查看。先显示关键信息（患者姓名与编号、检查日期、检查方式、部位、
+传输语法、尺寸、位深、灰度变换、窗口参数），其下可以展开文件里的全部数据元素，包括序列及其项数。</p>
+<p class="zh" lang="zh-Hans">文本按文件内声明的字符集解码，因此中国医院设备里的中文姓名、中文描述都能正确显示。<strong>文件内的数据永不翻译</strong>——
+患者姓名、序列描述等所有值都按原始记录原样呈现，因为翻译医学数据会改变它的含义。</p>
+</div>
+
+<!-- ===== 导出 PNG 及其限制 ===== -->
+<h2 id="export">Export PNG and its limits <span class="zh2" lang="zh-Hans">导出 PNG 与它的限制</span></h2>
+<div class="card">
+<p>Tap <code>⋯</code> → <strong>Export displayed image (PNG)</strong> (or the share button in the control bar). The system
+share sheet opens, where you can save the image to your Photo Library or send it anywhere you like. Nothing is uploaded
+by the app itself.</p>
+<ul>
+  <li>The PNG is an <strong>8-bit display image</strong> produced with the window width / level, invert and zoom you have
+  on screen at that moment — <strong>not</strong> the original pixel data.</li>
+  <li>It carries no DICOM metadata and cannot be opened again as a DICOM file.</li>
+  <li>Because it is a display result, it is not suitable as a clinical or diagnostic reference. Keep the original
+  <code>.dcm</code> files if you need the real data.</li>
+</ul>
+<p class="zh" lang="zh-Hans">点 <code>⋯</code> →「导出当前显示图 (PNG)」（或用控制条上的分享按钮），会打开系统分享面板，
+可以存到照片 App 或自行转发。App 本身不会上传任何东西。</p>
+<ul class="zh" lang="zh-Hans">
+  <li>导出的 PNG 是按当时屏幕上的窗宽窗位、反色与缩放生成的 <strong>8 位显示图像</strong>，<strong>不是</strong>原始像素数据。</li>
+  <li>它不携带任何 DICOM 元数据，也无法再作为 DICOM 文件打开。</li>
+  <li>它是显示结果，不能作为临床或诊断依据。需要真实数据时请保留原始 <code>.dcm</code> 文件。</li>
+</ul>
+</div>
+
+<!-- ===== 传输语法 ===== -->
+<h2 id="syntax">Supported transfer syntaxes <span class="zh2" lang="zh-Hans">支持的传输语法</span></h2>
+<div class="card">
+<p>Supported:</p>
+<ul>
+  <li><code>Explicit VR Little Endian</code></li>
+  <li><code>Implicit VR Little Endian</code></li>
+  <li><code>Deflated Explicit VR Little Endian</code></li>
+  <li><code>RLE Lossless</code></li>
+  <li><code>JPEG Baseline (Process 1)</code></li>
+  <li><code>JPEG 2000</code>, including lossless profiles</li>
+  <li><code>Explicit VR Big Endian</code></li>
+</ul>
+<p>Anything else — for example encrypted DICOM or other JPEG profiles — is reported as “Cannot decode this file”.
+The transfer syntax of an opened file is listed in the tag table, so you can check it there.</p>
+<p class="zh" lang="zh-Hans">以上即为当前支持的全部传输语法。</p>
+<p class="zh" lang="zh-Hans">其他语法（例如加密 DICOM、或其他 JPEG 配置）会提示「无法解码该文件」。已打开文件的传输语法可以在标签表里查到。</p>
+</div>
+
+<!-- ===== 语言 ===== -->
+<h2 id="languages">Languages <span class="zh2" lang="zh-Hans">支持的语言</span></h2>
+<div class="card">
+<p>The interface is available in <strong>English (default)</strong> and <strong>Simplified Chinese</strong>. The app follows
+your system language; you can also set it per-app in iOS <em>Settings → DICOM Viewer → Language</em>.
+Data read from DICOM files (patient names, series descriptions, and so on) is never translated in either language.</p>
+<p class="zh" lang="zh-Hans">界面提供<strong>英文（默认）</strong>与<strong>简体中文</strong>两种语言，会跟随系统语言；
+也可以在 iOS「设置 → DICOM 影像 → 语言」里单独为本 App 指定。无论哪种界面语言，DICOM 文件内的数据（患者姓名、序列描述等）都不会被翻译。</p>
+</div>
+
+<!-- ===== 常见问题 ===== -->
+<h2 id="faq">Frequently asked questions <span class="zh2" lang="zh-Hans">常见问题</span></h2>
+
+<details>
+<summary>A file will not open. What should I check?
+  <span class="zh2" lang="zh-Hans">文件打不开，应该先检查什么？</span></summary>
+<p>Check the transfer syntax against the <a href="#syntax">list above</a>. Then make sure the file is a real DICOM file and
+was downloaded completely — a truncated download (a few hundred KB instead of several MB) is the most common cause. If it
+came from an archive, unzip it first. There is no built-in viewer for non-DICOM formats.</p>
+<p class="zh" lang="zh-Hans">先对照<a href="#syntax">上面的列表</a>确认传输语法是否受支持；再确认它确实是 DICOM 文件且下载完整——下载中断（只有几百 KB 而不是几 MB）是最常见的原因。
+来自压缩包请先解压。本 App 不提供非 DICOM 格式的查看功能。</p>
+</details>
+
+<details>
+<summary>It looks different from the film I was given at the hospital.
+  <span class="zh2" lang="zh-Hans">为什么和医院给我的那张胶片/图像看起来不一样？</span></summary>
+<p>Usually window settings and the display itself. The hospital film was printed with its own window settings on a calibrated
+medical monitor; here the mapping is recomputed from the window width / level you set, on a phone screen that is not
+calibrated for medical use. Adjust the window, try <strong>Invert</strong>, and compare layers. This is exactly why the app
+must not be used as a clinical reference.</p>
+<p class="zh" lang="zh-Hans">通常是窗口参数和显示设备不同造成的。医院的胶片是在校准入过的医用显示器上、按它自己的窗口参数输出的；
+这里则由你设置的窗宽窗位实时换算，而且手机屏幕并未经过医学用途的显示校准。可以调整窗宽窗位、试试「反色」、并对照相邻层比较。
+这正说明本 App 的显示结果不能作为临床依据。</p>
+</details>
+
+<details>
+<summary>Where do my images live, and how do I delete them?
+  <span class="zh2" lang="zh-Hans">我的影像存在哪里？怎么删除？</span></summary>
+<p>Copied files live only inside this app’s sandbox on your device; the library footer shows how many files are stored.
+To remove one series, delete it from the library; to remove everything, use <strong>Delete all images</strong>
+(清空全部影像). Deleting the app removes its sandbox entirely. No copy exists anywhere else, because the app never
+transmits anything.</p>
+<p class="zh" lang="zh-Hans">导入的文件只存放在本 App 于本机的沙盒内，图库底部会显示当前文件数量。删除单个序列可在图库里直接删除；
+要一次清空就用「清空全部影像」。卸载 App 会连同沙盒一起删除。别处不存在任何副本，因为 App 从不外传数据。</p>
+</details>
+
+<details>
+<summary>Does the app upload my images or read my photo library?
+  <span class="zh2" lang="zh-Hans">App 会上传我的影像，或读取我的相册吗？</span></summary>
+<p>No. The app has no network permission, so it cannot reach the internet at all, and it does not ask for Photo Library
+access. It can only read the files you actively choose in the file picker, and it can hand you a PNG through the system
+share sheet, which you drive yourself.</p>
+<p class="zh" lang="zh-Hans">不会。App 没有联网权限，根本无法访问网络，也不会申请相册权限。它只能读取你在文件选择器里主动选择的文件；
+导出 PNG 走系统分享面板，完全由你自己操作。</p>
+</details>
+
+<details>
+<summary>The patient name shows as strange symbols.
+  <span class="zh2" lang="zh-Hans">患者姓名显示成乱码/奇怪符号。</span></summary>
+<p>The app decodes the character set declared in the file, including Chinese sets such as <code>ISO 2022 IR 58</code>
+(GB18030 / GBK / GB2312) and UTF-8. Some older files do not declare a character set at all; in that case the app makes a
+best guess, which can be wrong for a name. The pixel data is not affected. If you send us a description of such a file
+(never the image itself), we can look into it.</p>
+<p class="zh" lang="zh-Hans">App 按文件声明的字符集解码，支持中文常用的 <code>ISO 2022 IR 58</code>（GB18030 / GBK / GB2312）以及 UTF-8。
+少数老文件完全没有声明字符集，此时只能按经验推测，姓名字段就可能猜错。像素数据不受影响。如果你能描述这类文件的情况（请不要发影像本身），我们可以进一步排查。</p>
+</details>
+
+<details>
+<summary>Does it work on iPad or Mac?
+  <span class="zh2" lang="zh-Hans">支持 iPad 或 Mac 吗？</span></summary>
+<p>No. Version 1.0 is iPhone-only and requires iOS 16.0 or later.</p>
+<p class="zh" lang="zh-Hans">不支持。1.0 版本仅支持 iPhone，需要 iOS 16.0 或更高版本。</p>
+</details>
+
+<details>
+<summary>Can I use this to review my own scan at home?
+  <span class="zh2" lang="zh-Hans">我能在家里看自己的片子吗？</span></summary>
+<p>You can look at them, and read the tag values, for your own understanding. What you must not do is treat what this app
+shows as a diagnosis. Second opinions, treatment choices and any follow-up belong to a qualified professional working from
+the original data and the formal report.</p>
+<p class="zh" lang="zh-Hans">你可以为了自己理解而查看影像、读取标签数值。但不能把本 App 显示的内容当成诊断结论。
+第二意见、治疗选择和随访都必须由具备资质的医务人员依据原始数据与正式报告做出。</p>
+</details>
+
+<!-- ===== 联系方式 ===== -->
+<h2 id="contact">Contact <span class="zh2" lang="zh-Hans">联系方式</span></h2>
+<p>
+<a class="btn" href="mailto:liangsx.168@gmail.com?subject=DICOM%20Viewer%20support">Email support</a>
+<a class="btn ghost" href="privacy/">Privacy Policy / 隐私政策</a>
+</p>
+
+<footer>
+DICOM Viewer · Developer: Shanxue Liang · Bundle ID <code>com.localdicom.viewer</code><br>
+Contact: <a href="mailto:liangsx.168@gmail.com">liangsx.168@gmail.com</a> ·
+This page sets no cookies, loads no third-party scripts, fonts or images, and makes no network requests of its own.<br>
+<span class="zh" lang="zh-Hans">DICOM 影像 · 开发者：Shanxue Liang · 联系方式：<a href="mailto:liangsx.168@gmail.com">liangsx.168@gmail.com</a> ·
+本页不设 Cookie、不加载任何第三方脚本/字体/图片，自身也不发起任何网络请求。</span>
+</footer>
+
+</div>
+</body>
+</html>

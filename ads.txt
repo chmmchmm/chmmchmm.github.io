@@ -1,0 +1,7 @@
+# ads.txt — 网站展示广告用（IAB Tech Lab "Authorized by Digital Content Publisher"）
+#
+# 与 app-ads.txt 不是一回事：ads.txt 管的是这个域名上网页自身的展示广告；
+# App 内广告要的是 app-ads.txt。这里放一份只是为了以后本网页接 AdSense 时不用再折腾。
+#
+# 状态：占位，无授权行。接 AdSense 后贴真实行，例如：
+# google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0

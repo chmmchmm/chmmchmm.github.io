@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<!--
+  chmmchmm 开发者主页（https://chmmchmm.github.io/）。
+  作用有三：① 它是 App Store listing 里 marketing URL（开发者网站）指向的域名根，AdMob 等广告网络
+  就是按这个 hostname 来抓 /app-ads.txt 的；② 给审核员和用户一个能看到开发者身份与联系方式的页面；
+  ③ 汇总两个 app 的支持页与隐私政策。
+  约束（与 app0/site、app1/site 一致）：单文件自包含、内联 <style>、不引任何外部 CSS/JS/字体/图片/CDN、
+  不设 Cookie、无统计脚本；站内链接一律相对路径。
+  TODO(上线后)：两个 app 过审发布后，在各自卡片里补 App Store 链接
+  https://apps.apple.com/app/id6819313376 （Face Shield）、https://apps.apple.com/app/id6819683365 （DICOM Viewer）。
+  在此之前不放，避免出现打不开的死链。
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>chmmchmm — iOS apps</title>
+<meta name="description" content="Developer website for chmmchmm: Face Shield (Kids Face Blur) and DICOM Viewer — two offline iPhone apps that keep your data on your device. 开发者网站：Face Shield 儿童人脸打码与 DICOM Viewer 本地影像查看，全部处理都在设备本地完成。">
+<style>
+:root{--ink:#12212b;--mut:#5b6b78;--accent:#2f7fb8;--line:#dbe4ea;--bg:#f5f8fa;--zh:#3f515e}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+ font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+ -webkit-font-smoothing:antialiased}
+.wrap{max-width:720px;margin:0 auto;padding:40px 20px 72px}
+header{display:flex;align-items:center;gap:12px;margin-bottom:22px}
+.badge{width:52px;height:52px;border-radius:13px;background:linear-gradient(160deg,#4fb3d9,#1c5a86);flex:0 0 auto}
+h1{font-size:26px;margin:0;letter-spacing:-.02em}
+.sub{color:var(--mut);font-size:14px;margin-top:2px}
+.lede{font-size:17px;color:#22323d}
+h2{font-size:18px;margin:32px 0 8px;letter-spacing:-.01em}
+p,li{color:#22323d}
+.zh{color:var(--zh);font-size:15px;border-left:3px solid var(--line);padding-left:12px;margin-top:6px}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 20px;margin-top:12px}
+.card h3{font-size:17px;margin:0 0 4px}
+.card .tag{color:var(--mut);font-size:13px;margin:0 0 8px}
+a{color:var(--accent)}
+.btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;
+ padding:9px 15px;border-radius:10px;font-weight:600;margin:8px 8px 0 0;font-size:14px}
+.btn.ghost{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+code{background:#eef3f6;border-radius:5px;padding:1px 5px;font-size:14px}
+footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);color:var(--mut);font-size:13px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="badge" aria-hidden="true"></div>
+  <div>
+    <h1>chmmchmm</h1>
+    <div class="sub">Independent iOS developer · one person · no backend</div>
+  </div>
+</header>
+
+<p class="lede">This is the developer website for my iPhone apps. Both of them do their work entirely on
+your device — no servers, no accounts, no uploads.</p>
+<p class="zh" lang="zh-Hans">这是这些 iPhone 应用的开发者网站。两个应用都在你的设备本地完成全部处理——没有服务器、没有账号、不上传任何东西。</p>
+
+<h2>Apps</h2>
+
+<div class="card">
+  <h3>Face Shield — Kids Face Blur</h3>
+  <p class="tag">Mosaic every child's face in a group photo before you share it.</p>
+  <p>Face Shield finds faces in your photos and covers them with a mosaic that is re-checked before the
+  photo can be saved. Photos stay in your photo library; nothing is uploaded, and no analytics or
+  third-party SDKs are involved.</p>
+  <p class="zh" lang="zh-Hans">分享合影前先把孩子的脸挡住。Face Shield 会找出照片里的人脸并用马赛克覆盖，还会回头复查遮没遮住，遮住才让你存。照片始终留在你的相册里：不上传、无统计、无第三方 SDK。</p>
+  <p>
+    <a class="btn" href="apps/fs/">Support</a>
+    <a class="btn ghost" href="apps/fs/privacy/">Privacy Policy</a>
+  </p>
+</div>
+
+<div class="card">
+  <h3>DICOM Viewer</h3>
+  <p class="tag">Open and inspect .dcm files offline, on iPhone.</p>
+  <p>DICOM Viewer reads DICOM (.dcm) files and decodes the pixel data locally on your iPhone, including
+  compressed transfer syntaxes. It is a viewer for your own files — <strong>not a medical device and not
+  for diagnosis</strong>.</p>
+  <p class="zh" lang="zh-Hans">在 iPhone 上离线打开并查看 .dcm 文件，像素数据也在本机解码，包含常见压缩传输语法。它是给你自己文件用的查看器——<strong>不是医疗器械，不用于诊断</strong>。</p>
+  <p>
+    <a class="btn" href="apps/dcm/">Support</a>
+    <a class="btn ghost" href="apps/dcm/privacy/">Privacy Policy</a>
+  </p>
+</div>
+
+<h2>Privacy</h2>
+<p>Neither app collects personal data. Neither has a backend. Photos, DICOM files and everything derived
+from them stay on your device, and I cannot see them. The app privacy labels in the App Store match the
+privacy policies linked above.</p>
+<p class="zh" lang="zh-Hans">两个应用都不收集个人数据，也都没有后端。照片、DICOM 文件以及由此产生的内容都留在设备本地，我看不到它们。App Store 上的隐私标签与上面链接的隐私政策一致。</p>
+
+<h2>Advertising &amp; ownership</h2>
+<p>This domain is the developer website listed in the App Store listings of the apps above, so it is also
+where ad platforms look for authorized sellers: <code>https://chmmchmm.github.io/app-ads.txt</code>. At the
+moment neither app shows advertising, so that file is a placeholder with no seller lines.</p>
+<p class="zh" lang="zh-Hans">本域名是上面这些应用商店页面里登记的开发者网站，因此广告网络会到这里来查授权销售方：<code>https://chmmchmm.github.io/app-ads.txt</code>。目前两个应用都没有接广告，所以该文件是没有授权行的占位文件。</p>
+
+<h2>Contact</h2>
+<p>Email: <a href="mailto:liangsx.168@gmail.com">liangsx.168@gmail.com</a> — I read everything I get.</p>
+<p class="zh" lang="zh-Hans">邮箱：<a href="mailto:liangsx.168@gmail.com">liangsx.168@gmail.com</a>，来信都会看。</p>
+
+<footer>
+  © 2026 chmmchmm. This page sets no cookies, loads no external resources and runs no analytics.<br>
+  本页面不设 Cookie、不加载任何外部资源、无统计脚本。
+</footer>
+
+</div>
+</body>
+</html>

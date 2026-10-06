@@ -1,0 +1,4 @@
+# 不做任何抓取限制：广告网络的爬虫（AdMob/AdSense）和 App Store 审核员都要能进来。
+# 特别注意：不要用 Disallow 挡掉 app-ads.txt / ads.txt，那会让验证直接失败。
+User-agent: *
+Allow: /

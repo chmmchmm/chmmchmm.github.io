@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<!--
+  DICOM Viewer 隐私政策页（Privacy Policy）。
+  结构与视觉风格沿用 app0/site/privacy/index.html：同样的 :root 变量、.wrap/.badge/.card/.accent/code/footer 层级，
+  页头用 44px 徽标 + 返回支持页的相对链接 ../。
+  双语呈现方式：英文在前（<html lang="en">），中文对照用 class="zh" + lang="zh-Hans" 紧跟其后；
+  小节标题的中文用 <span class="zh2"> 换行显示在英文下方。
+  约束：不引用任何外部 CSS/JS/字体/图片/CDN，不设 Cookie，无统计脚本（页面本身就是零联网的示例）。
+  占位符：liangsx.168@gmail.com —— 上线前替换为真实邮箱；生效日期发布时也请核对。
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DICOM Viewer — Privacy Policy</title>
+<meta name="description" content="DICOM Viewer collects no personal data and no image data. Everything is parsed and displayed on your device, nothing is transmitted, and there are no servers, accounts, ads or analytics. DICOM 影像不收集、不传输、不存储任何个人信息与影像数据。">
+<style>
+:root{--ink:#101a24;--mut:#5b6b78;--accent:#2f7fb8;--accent-ink:#1b5f8c;--line:#dbe4ea;--bg:#f5f8fa;--zh:#3f515e}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+ font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+ -webkit-font-smoothing:antialiased}
+.wrap{max-width:720px;margin:0 auto;padding:40px 20px 72px}
+header{display:flex;align-items:center;gap:12px;margin-bottom:24px}
+/* 图标位：纯 CSS 渐变方块，不引任何图片资源 */
+.badge{width:44px;height:44px;border-radius:11px;background:linear-gradient(160deg,#4fb3d9,#1c5a86);flex:0 0 auto}
+h1{font-size:26px;margin:0;letter-spacing:-.02em}
+.sub{color:var(--mut);font-size:14px;margin-top:2px}
+h2{font-size:18px;margin:32px 0 8px;letter-spacing:-.01em}
+p,li{color:#22323d}
+ul{padding-left:20px;margin:8px 0}
+li{margin:4px 0}
+/* 中文对照：紧跟英文，左侧竖线 + 略小字号 */
+.zh{margin:8px 0 0;color:var(--zh);font-size:15px;border-left:3px solid var(--line);padding-left:12px}
+h2 .zh2{display:block;font-size:15px;font-weight:600;color:var(--mut);margin-top:2px}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin-top:14px}
+.accent{background:#eaf4fb;border:1px solid #bcd8ec}
+.warn{background:#fff5eb;border:1px solid #f0d3ab}
+a{color:var(--accent-ink)}
+code{background:#e8eff4;padding:1px 5px;border-radius:5px;font-size:14px;
+ font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;word-break:break-word}
+/* 「不收集」清单用叉号，纯字符不引图标字体 */
+ul.no li::marker{content:"✕ "}
+footer{margin-top:40px;color:var(--mut);font-size:13px;border-top:1px solid var(--line);padding-top:18px}
+footer .zh{border:0;padding-left:0;font-size:13px;color:var(--mut)}
+@media (max-width:520px){
+ .wrap{padding:28px 16px 56px}
+ h1{font-size:22px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- ===== 页头：返回支持页用相对路径 ../ ===== -->
+<header>
+  <div class="badge" aria-hidden="true"></div>
+  <div>
+    <h1>Privacy Policy</h1>
+    <div class="sub">DICOM Viewer / DICOM 影像 · <a href="../">Support</a> · <code>com.localdicom.viewer</code></div>
+  </div>
+</header>
+
+<!-- ===== 一句话结论 ===== -->
+<div class="card accent">
+<p><strong>The short version:</strong> DICOM Viewer does not collect, store on any server, transmit, sell or share any
+personal information or any image data. It has no network permission at all, so it cannot send anything anywhere. Your
+DICOM files are copied into the app’s own sandbox on your device and are read, decoded and displayed there only.</p>
+<p class="zh" lang="zh-Hans"><strong>一句话结论：</strong>「DICOM 影像」不收集、不在任何服务器上存储、不传输、不出售、不共享任何个人信息或影像数据。
+本 App 完全没有联网权限，因此无法把任何东西发送到任何地方。你的 DICOM 文件被复制进 App 在本机沙盒内，只在你设备上被读取、解码与显示。</p>
+</div>
+
+<!-- ===== 医学影像属于敏感数据 ===== -->
+<h2>Medical images are sensitive data
+  <span class="zh2" lang="zh-Hans">医学影像属于敏感数据</span></h2>
+<div class="card warn">
+<p>DICOM files usually contain patient names, ID numbers, birth dates and other health information. Because of that, the
+design goal of this app is that no such data ever leaves your device — not to a server, not to an ad network, not to a
+crash reporter. The app also carries the same limits as its display: it is not a medical device, and nothing it shows may
+be used for diagnosis, treatment or any clinical decision.</p>
+<p class="zh" lang="zh-Hans">DICOM 文件通常包含患者姓名、编号、出生日期等健康信息。因此本 App 的设计目标就是：这些数据永远不离开你的设备——
+不发给服务器、不给广告平台、也不给任何崩溃统计服务。同时 App 也带着与显示结果相同的限制：它不是医疗器械，其显示内容不得用于诊断、治疗或任何临床决策。</p>
+</div>
+
+<!-- ===== 权限与用途 ===== -->
+<h2>Permissions and what they are used for
+  <span class="zh2" lang="zh-Hans">权限与用途</span></h2>
+<div class="card">
+<ul>
+  <li><strong>File access (the only one).</strong> When you tap import, iOS shows its own file picker and you choose which
+  files or folders the app may read. The app receives access only to what you actively selected, and it copies those files
+  into its own sandbox. It does not scan your device, browse your folders in the background, or read files you did not pick.</li>
+  <li><strong>No network permission.</strong> The app cannot reach the internet, so uploading is not possible even in principle.</li>
+  <li><strong>No Photo Library access.</strong> The app never reads your photos. When you export a PNG, the iOS share sheet
+  is presented and <em>you</em> decide where that single file goes.</li>
+  <li><strong>No camera, no microphone, no location, no contacts, no HealthKit, no Sign in with Apple.</strong> None of these
+  are requested, so none can be used.</li>
+</ul>
+<p class="zh" lang="zh-Hans">
+  <strong>文件读取（唯一的权限用途）。</strong>点击导入后由 iOS 弹出系统文件选择器，你亲自选择允许 App 读取的文件或文件夹。
+  App 只获得你主动选择的那部分内容，并把它们复制进自己的沙盒；它不会扫描你的设备、不会在后台浏览你的目录、也不会读取你没选的文件。<br>
+  <strong>没有联网权限。</strong>App 无法访问网络，因此从原理上就不可能上传。<br>
+  <strong>不读取相册。</strong>App 从不读取你的照片。导出 PNG 时打开的是系统分享面板，这个文件去哪里由<strong>你</strong>决定。<br>
+  <strong>不使用相机、麦克风、定位、通讯录、健康数据、通过 Apple 登录。</strong>这些权限一个都没有申请，因此也不可能被使用。
+</p>
+</div>
+
+<!-- ===== 不收集清单 ===== -->
+<h2>What is never collected <span class="zh2" lang="zh-Hans">绝不收集的信息</span></h2>
+<div class="card">
+<ul class="no">
+  <li>No name, email address, phone number, contacts or address book.</li>
+  <li>No patient data: no patient names, IDs, birth dates, study descriptions, pixel data, file names or file lists.</li>
+  <li>No analytics, no crash reporting, no advertising identifiers, no attribution or fingerprinting.</li>
+  <li>No third-party SDKs of any kind — nothing of ours runs your data through somebody else’s code.</li>
+  <li>No account, no sign-in, no subscription, no purchase flow.</li>
+  <li>No IP address or device log kept by us, because there is no service of ours that could receive it.</li>
+</ul>
+<p class="zh" lang="zh-Hans">
+  ✕ 不收集姓名、邮箱、电话号码、通讯录或联系人。<br>
+  ✕ 不收集患者数据：患者姓名、编号、出生日期、检查描述、像素数据、文件名与文件清单都不收集。<br>
+  ✕ 不做统计分析、不接崩溃上报、不采集广告标识符、不做归因或设备指纹。<br>
+  ✕ 不集成任何第三方 SDK——你的数据不会经过任何别人的代码。<br>
+  ✕ 没有账号、不需要登录、没有订阅、没有内购。<br>
+  ✕ 我们不记录 IP 地址或设备日志，因为我们根本没有可以接收它们的服务。
+</p>
+</div>
+
+<!-- ===== 影像存在哪里 ===== -->
+<h2>Where your images live <span class="zh2" lang="zh-Hans">你的影像存放在哪里</span></h2>
+<div class="card">
+<p>Imported files are copied into the app’s sandbox, which is storage iOS reserves for this app on your device. The library
+screen shows how many files are stored there. No copy is made on any server, and no copy is sent to the developer. The files
+you imported into the <em>Files</em> app stay where you put them; the app only keeps its own copies.</p>
+<p class="zh" lang="zh-Hans">导入的文件被复制进 App 的沙盒——那是 iOS 在你设备上划给本 App 的专属存储。图库界面会显示当前存放的文件数量。
+任何服务器上都不存在副本，也不会有任何副本发给开发者。你放在「文件」App 里的原件留在原地，App 只保留自己那份副本。</p>
+</div>
+
+<!-- ===== 删除方式 ===== -->
+<h2>Deleting your data <span class="zh2" lang="zh-Hans">如何删除数据</span></h2>
+<div class="card">
+<ul>
+  <li><strong>One series.</strong> Delete a series from the library and its files are removed from the sandbox.</li>
+  <li><strong>Everything.</strong> Use <em>Delete all images</em> (清空全部影像) in the library to remove every imported file
+  in one action.</li>
+  <li><strong>All of it, including settings.</strong> Delete the app from your device. iOS removes the app’s sandbox together
+  with it, so nothing of yours remains.</li>
+  <li><strong>Exported PNGs.</strong> Those live wherever <em>you</em> sent them (for example your Photo Library); delete them
+  there. The app keeps no copy of what you exported.</li>
+  <li><strong>No request needed.</strong> Because nothing is held by us, there is no data-subject deletion or export request
+  for you to file and for us to answer.</li>
+</ul>
+<p class="zh" lang="zh-Hans">
+  <strong>单个序列。</strong>在图库里删除某个序列，它的文件就从沙盒中移除。<br>
+  <strong>全部影像。</strong>用图库里的「清空全部影像」一次移除所有导入文件。<br>
+  <strong>连同设置一起清空。</strong>直接卸载 App，iOS 会连同沙盒一并删除，你的数据不会残留。<br>
+  <strong>已导出的 PNG。</strong>它们存在于<strong>你</strong>发送到的位置（例如照片 App），请到那里删除；App 不保留导出副本。<br>
+  <strong>无需提交请求。</strong>由于我们手里没有任何数据，你不必提出删除或导数据的请求，我们也无需处理。
+</p>
+</div>
+
+<!-- ===== 无追踪、无广告 ===== -->
+<h2>No ads, no tracking, no third parties <span class="zh2" lang="zh-Hans">无广告、无追踪、无第三方</span></h2>
+<div class="card">
+<p>There is no advertising in the app, no tracking across apps or websites, and no third-party code inside it. Nothing about
+your usage — which files you opened, which window settings you use, how long you stayed — is recorded or reported anywhere.
+The App Store “Data Used to Track You” and “Data Linked to You” sections for this app should therefore be empty; if you ever
+find them populated, that would be a bug worth reporting.</p>
+<p class="zh" lang="zh-Hans">App 内没有广告，没有跨 App 与跨网站的追踪行为，内部也没有任何第三方代码。你的使用情况——打开了哪些文件、用了什么窗口参数、
+停留多久——都不会被记录或上报。因此本 App 在 App Store 上的「用于追踪你的数据」与「与你关联的数据」应当都是空的；如果你看到被填上了内容，那是一个值得报告的错误。</p>
+</div>
+
+<!-- ===== 儿童 ===== -->
+<h2>Children <span class="zh2" lang="zh-Hans">儿童隐私</span></h2>
+<div class="card">
+<p>The app collects no data from anyone, so it collects no data from children either — there is nothing to delete, by design.
+The app is not directed at children and asks for no personal information. If a child’s DICOM study is opened on a device, that
+file stays inside the app’s sandbox on that device like any other file, and the parent or guardian can remove it with the
+controls described above.</p>
+<p class="zh" lang="zh-Hans">本 App 不向任何人收集数据，因此也不收集儿童的数据——按设计就没有可删除的东西。App 不以儿童为对象，也不要求提供任何个人信息。
+如果设备里打开了儿童的 DICOM 检查文件，它和其他文件一样只留在该设备的 App 沙盒内，家长或监护人可用上文的方式删除。</p>
+</div>
+
+<!-- ===== 本网站 ===== -->
+<h2>This website <span class="zh2" lang="zh-Hans">本网站</span></h2>
+<div class="card">
+<p>This privacy and support site serves static HTML files only. It sets no cookies, uses no local storage, loads no
+third-party scripts, fonts or images, and runs no analytics. The pages themselves are written to work with zero external
+requests, which is the same rule the app follows. Your host’s web server may still write ordinary access logs; that is the
+hosting provider, not the app, and we do not add any tracking of our own.</p>
+<p class="zh" lang="zh-Hans">本隐私与支持站点只提供静态 HTML 文件：不设 Cookie、不使用本地存储、不加载任何第三方脚本/字体/图片、不做统计分析。
+页面本身按「零外部请求」编写，这也正是本 App 遵循的同一条规则。你的托管服务器仍可能记录普通的访问日志，那属于托管服务商而不是 App，我们自身不添加任何追踪。</p>
+</div>
+
+<!-- ===== 你的权利 ===== -->
+<h2>Your rights <span class="zh2" lang="zh-Hans">你的权利</span></h2>
+<div class="card">
+<p>Under GDPR, CCPA/CPRA and similar frameworks you may request access, correction, deletion, portability or a restriction on
+processing. With this app those rights are satisfied by its design: we hold nothing about you, so there is nothing for us to
+disclose, correct, export or delete. If you would like written confirmation of that, or you believe this page is inaccurate,
+email <a href="mailto:liangsx.168@gmail.com">liangsx.168@gmail.com</a> — you will get a reply from a human: the developer.</p>
+<p class="zh" lang="zh-Hans">在 GDPR、CCPA/CPRA 等法规下，你可以请求访问、更正、删除、可携带或限制处理。对本 App 而言，这些权利由设计本身满足：
+我们不持有你的任何信息，因此没有可披露、可更正、可导出、可删除的内容。如果你希望获得书面确认，或认为本页描述不准确，
+请发邮件到 <a href="mailto:liangsx.168@gmail.com">liangsx.168@gmail.com</a>——回复你的是人，也就是开发者本人。</p>
+</div>
+
+<!-- ===== 政策更新 ===== -->
+<h2>Changes to this policy <span class="zh2" lang="zh-Hans">本政策的更新</span></h2>
+<div class="card">
+<p>Any update is published at this address with a new effective date below. Material changes will also be reflected in the
+app’s “Read Before Use” screen.</p>
+<p class="zh" lang="zh-Hans">任何更新都会发布在本地址，并在下方标注新的生效日期。实质性变更同时会反映在 App 的「使用前必读」页面中。</p>
+</div>
+
+<footer>
+Effective date: 6 October 2026<br>
+Contact: <a href="mailto:liangsx.168@gmail.com">liangsx.168@gmail.com</a> · Developer: Shanxue Liang · <a href="../">Support</a><br>
+DICOM Viewer / DICOM 影像 · Bundle ID <code>com.localdicom.viewer</code> · iPhone, iOS 16.0+<br>
+<span class="zh" lang="zh-Hans">生效日期：2026 年 10 月 6 日 · 联系方式：<a href="mailto:liangsx.168@gmail.com">liangsx.168@gmail.com</a> ·
+开发者：Shanxue Liang · 仅支持 iPhone，iOS 16.0 起</span>
+</footer>
+
+</div>
+</body>
+</html>
