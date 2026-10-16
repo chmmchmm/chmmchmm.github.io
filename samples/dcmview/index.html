@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sample DICOM files — DICOM Viewer local viewer</title>
+<meta name="robots" content="noindex">
+<style>
+  :root { color-scheme: light dark }
+  body { font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+         max-width: 780px; margin: 0 auto; padding: 32px 20px 64px; }
+  h1 { font-size: 26px; margin: 0 0 6px }
+  .sub { opacity: .65; margin: 0 0 28px }
+  .note { border-left: 3px solid #ff9f0a; padding: 10px 14px; background: rgba(255,159,10,.09);
+          border-radius: 4px; margin: 0 0 28px }
+  table { border-collapse: collapse; width: 100%; font-size: 14px; margin-bottom: 28px }
+  th, td { text-align: left; padding: 7px 10px; border-bottom: 1px solid rgba(128,128,128,.25) }
+  th { font-weight: 600; opacity: .7 }
+  code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13px }
+  a { text-decoration: none } a:hover { text-decoration: underline }
+  .big { display: inline-block; padding: 11px 18px; border-radius: 8px;
+         background: #0a84ff; color: #fff; font-weight: 600 }
+  footer { margin-top: 40px; font-size: 13px; opacity: .6 }
+</style>
+</head>
+<body>
+
+<h1>Sample DICOM files</h1>
+<p class="sub">Files referenced from App&nbsp;Store review for <strong>DICOM Viewer local viewer</strong> (bundle id <code>com.localdicom.viewer</code>).</p>
+
+<div class="note">
+  <strong>These are synthetic images, not patient data.</strong> Every file below was generated in software
+  by the app's own sample generator. The patient name is <code>Sample^Synthetic</code>, the patient ID is
+  <code>SAMPLE-0001</code>, <code>PatientSex</code> is <code>O</code> (Other), and the study description says
+  <em>“Demo study - not a real patient”</em>. No real person's information is present in any of them.
+</div>
+
+<p>
+  <a class="big" href="../dcmview-sample-files.zip">Download all 11 files (.zip, 1.1&nbsp;MB)</a>
+</p>
+
+<h2>What's in the set</h2>
+<table>
+  <thead><tr><th>File</th><th>Modality</th><th>Matrix</th><th>Frames</th><th>Transfer syntax</th></tr></thead>
+  <tbody>
+    <tr><td><a href="ct_00.dcm">ct_00.dcm</a> … <a href="ct_03.dcm">ct_03.dcm</a></td><td>CT</td><td>512 × 512, 16-bit</td><td>4 (one series)</td><td>RLE Lossless</td></tr>
+    <tr><td><a href="mr_00.dcm">mr_00.dcm</a> … <a href="mr_05.dcm">mr_05.dcm</a></td><td>MR</td><td>160 × 160, 16-bit</td><td>6 (one series)</td><td>Implicit VR Little Endian</td></tr>
+    <tr><td><a href="us_00.dcm">us_00.dcm</a></td><td>US</td><td>128 × 128, 8-bit RGB</td><td>2 (multiframe)</td><td>RLE Lossless</td></tr>
+  </tbody>
+</table>
+
+<h2>How the app uses them</h2>
+<p>
+  The same files ship inside the app bundle. On the first launch the app imports them into its own library,
+  where each series is labelled with a <em>SAMPLE</em> badge and the footer states that they are synthetic.
+  They behave exactly like imported files: they can be opened, windowed, panned, zoomed, inspected tag by tag,
+  and deleted. Once the user deletes them (or clears the library) the app does not put them back.
+</p>
+<p>
+  You can also import them yourself with the <em>Import</em> button in the app, which reads from the iOS Files
+  app — that path is independent of the built-in samples.
+</p>
+
+<footer>
+  Synthetic data generated for demonstration purposes. Not for clinical use.
+</footer>
+
+</body>
+</html>
