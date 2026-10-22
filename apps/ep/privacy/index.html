@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Everproof — Privacy Policy</title>
+<meta name="description" content="Everproof: Warranty Vault collects no personal data. Your receipts, serials and warranty dates are encrypted and stay on your device. No account, no server, no uploads.">
+<style>
+:root{--ink:#29241f;--mut:#6d6357;--copper:#b85c28;--line:#e3d9c9;--bg:#f7f2e8;--card:#fffdf9}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+ font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+ -webkit-font-smoothing:antialiased}
+.wrap{max-width:720px;margin:0 auto;padding:40px 20px 72px}
+header{display:flex;align-items:center;gap:12px;margin-bottom:24px}
+.badge{width:44px;height:44px;border-radius:11px;background:linear-gradient(160deg,#c9713a,#9c4a1e)}
+h1{font-size:26px;margin:0;letter-spacing:-.02em}
+.sub{color:var(--mut);font-size:14px;margin-top:2px}
+h2{font-size:18px;margin:32px 0 8px;letter-spacing:-.01em}
+p,li{color:#3a3129}
+ul{padding-left:20px;margin:8px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin-top:14px}
+.accent{background:#fdf1e7;border:1px solid #ecd0b8}
+code{background:#f1e8db;padding:1px 5px;border-radius:5px;font-size:14px}
+a{color:#a34f1f}
+.zh{color:var(--mut);font-size:15px}
+footer{margin-top:40px;color:var(--mut);font-size:13px;border-top:1px solid var(--line);padding-top:18px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="badge" aria-hidden="true"></div>
+  <div>
+    <h1>Privacy Policy</h1>
+    <div class="sub">Everproof: Warranty Vault · <a href="../">Support</a></div>
+  </div>
+</header>
+
+<div class="card accent">
+<strong>The short version:</strong> Everproof collects nothing. It has no account, no server and no network
+code of any kind. Your receipts, serial numbers, prices and warranty dates are encrypted and written to
+this device only. The developer cannot see them, and neither can anyone else.
+<p class="zh" lang="zh-Hans"><strong>先说结论：</strong>Everproof 不收集任何东西。没有账号、没有服务器，代码里也没有任何网络请求。
+你的收据、序列号、价格和保修日期都是加密后只写进这台设备。开发者看不到它们，别人也看不到。</p>
+</div>
+
+<h2>What is stored, and where</h2>
+<p>Everything you enter lives inside Everproof's own storage area on your device (its app sandbox):
+the record index, the photos you attach as proof of purchase, and the text recognised from those photos.
+Nothing is copied anywhere else. Removing the app removes all of it.</p>
+<p class="zh" lang="zh-Hans">你输入的每一项内容都只存在 Everproof 自己的存储区（应用沙盒）里：记录索引、你作为购买凭证附加的照片、
+以及从这些照片识别出的文字。不会复制到任何别的地方。卸载应用就等于全部删掉。</p>
+
+<h2>How it is protected</h2>
+<ul>
+  <li>Every record and every photo is encrypted with <strong>AES-256-GCM</strong>, each item with its own
+  random nonce, under a randomly generated vault key.</li>
+  <li>Your passcode never touches storage. It is stretched with <strong>PBKDF2-HMAC-SHA256, 310,000
+  iterations</strong> and a random salt into a key-encryption key, which wraps the vault key. A wrong
+  passcode simply fails authenticated decryption — there is nothing to compare against.</li>
+  <li>Optional Face ID / Touch ID stores the key in the iOS Keychain with
+  <code>biometryCurrentSet</code> and <code>AfterFirstUnlockThisDeviceOnly</code>: it never syncs to
+  iCloud, never leaves the device, and is voided the moment you change your enrolled face or fingerprint.</li>
+  <li>Because the passcode is not recoverable by anyone, <strong>forgetting it means the vault is reset</strong>.
+  The app offers no reset by email, no recovery key, no back door — that is a deliberate design choice,
+  and the app tells you so before you set the passcode.</li>
+</ul>
+<ul class="zh" lang="zh-Hans">
+<li>每一条记录、每一张照片都用 <strong>AES-256-GCM</strong> 加密，每条各自随机 nonce，密钥是一把随机生成的保险箱主密钥。</li>
+<li>你的密码从不落盘。它经过 <strong>PBKDF2-HMAC-SHA256、31 万次迭代</strong>加随机盐，派生出密钥加密密钥，再去包裹主密钥。
+密码错了就是认证解密失败——系统里没有任何东西可以拿来比对。</li>
+<li>可选的 Face ID / Touch ID 把密钥放进 iOS 钥匙串，带 <code>biometryCurrentSet</code> 和
+<code>AfterFirstUnlockThisDeviceOnly</code>：不同步 iCloud、不出设备，一旦你改了录入的面容或指纹就立即失效。</li>
+<li>正因为谁都无法找回密码，<strong>忘记密码就意味着保险箱重置</strong>。应用不提供邮箱重置、不提供恢复密钥、不留后门——
+这是刻意的设计，应用也会在你设置密码前明确告诉你。</li>
+</ul>
+
+<h2>Permissions, and what each one is used for</h2>
+<ul>
+  <li><strong>Camera</strong> — photograph a receipt. The image goes straight into your vault.</li>
+  <li><strong>Photo library</strong> — you pick specific images to attach. Everproof only reads the ones
+  you select; it never scans or uploads your library.</li>
+  <li><strong>Notifications</strong> — local reminders for warranty and return deadlines. Scheduled on
+  your device; nothing is sent anywhere.</li>
+</ul>
+<p>Text recognition on your receipt photos runs entirely on the device using Apple's own Vision
+framework. No image or recognised text is transmitted anywhere, and there is no code path that could do so.</p>
+<ul class="zh" lang="zh-Hans">
+<li><strong>相机</strong>——拍收据。拍完直接进你的保险箱。</li>
+<li><strong>照片图库</strong>——由你挑选要附加的图片。Everproof 只读你选中的那几张，绝不扫描或上传整个相册。</li>
+<li><strong>通知</strong>——保修期与退货期限的本地提醒。全部排程在本机，不发送到任何地方。</li>
+</ul>
+<p class="zh" lang="zh-Hans">收据照片的文字识别完全在本机用苹果自家的 Vision 框架完成。任何图片或识别出的文字都不会被传输到任何地方，
+代码里也不存在能做到这件事的路径。</p>
+
+<h2>Backups</h2>
+<p>Everproof can build a backup archive containing your records and photos. That file is created on your
+device and is yours to keep, move or delete; it stays encrypted and is protected by the same passcode.
+Everproof never transmits it.</p>
+<p class="zh" lang="zh-Hans">Everproof 可以生成一个包含记录和照片的备份文件。这个文件在你设备上生成，归你处置；它同样是加密的，
+用的还是同一个密码。Everproof 从不外传它。</p>
+
+<h2>What Everproof does not do</h2>
+<ul>
+  <li>No analytics, no usage tracking, no crash reporting, no advertising, no attribution.</li>
+  <li>No third-party SDKs or embedded web content.</li>
+  <li>No accounts, no sign-in, no email collection.</li>
+  <li>No collection of any data — so nothing is sold, shared, or disclosed, and there is nothing to
+  hand over on request.</li>
+</ul>
+<p>This matches the App Store privacy label for the app, which reads <strong>Data Not Collected</strong>.</p>
+<p class="zh" lang="zh-Hans">无统计、无使用追踪、无崩溃上报、无广告、无归因；无第三方 SDK，也不内嵌网页；无账号、不登录、不收集邮箱；
+不收集任何数据，因此也就无从出售、共享或披露，被要求提供时也没有东西可给。</p>
+<p class="zh" lang="zh-Hans">这与 App Store 上该应用的隐私标签一致：<strong>不收集数据（Data Not Collected）</strong>。</p>
+
+<h2>Children</h2>
+<p>Everproof is a tool for keeping your own purchase records. It is not directed at children and collects
+no data from anyone, of any age.</p>
+<p class="zh" lang="zh-Hans">Everproof 是管理自己购物凭证的工具，不面向儿童，也不收集任何年龄段用户的任何数据。</p>
+
+<h2>Your data</h2>
+<p>There is no data subject access request to make, because there is no data held by anyone but you.
+Deleting the app deletes everything. If you want a copy first, export a backup archive from Settings
+before deleting.</p>
+<p class="zh" lang="zh-Hans">不存在需要向开发者提出的数据访问或删除请求，因为除了你自己，没有人持有这些数据。删除应用即清空一切。
+如果想先留一份，删除前在「设置」里导出备份文件。</p>
+
+<h2>Contact</h2>
+<p>Questions about this policy: email
+<a href="mailto:liangsx.168@gmail.com?subject=Everproof%20privacy">liangsx.168@gmail.com</a>
+— you will get a reply from the developer.</p>
+<p class="zh" lang="zh-Hans">对本政策有疑问，请发邮件到
+<a href="mailto:liangsx.168@gmail.com?subject=Everproof%20%E9%9A%90%E7%A7%81">liangsx.168@gmail.com</a>，
+回复你的是开发者本人。</p>
+
+<h2>Changes</h2>
+<p>If this policy changes, this page is updated and its date below changes with it. The app's behaviour
+described above is not expected to change: there is no plan to add a backend, analytics or advertising.</p>
+<p class="zh" lang="zh-Hans">本政策如有变更，会直接更新本页并同步下方日期。以上应用行为预计不会改变：没有加后端、
+加统计或加广告的计划。</p>
+
+<footer>
+Effective date: 2026-10-22 · Developer: Shanxue Liang · <a href="../">Support</a><br>
+This page sets no cookies, loads no external resources and runs no analytics.<br>
+<span class="zh" lang="zh-Hans">生效日期：2026-10-22 · 开发者：Shanxue Liang · <a href="../">支持页面</a><br>
+本页面不设 cookie、不加载任何外部资源、不跑任何统计。</span>
+</footer>
+</div>
+</body>
+</html>
