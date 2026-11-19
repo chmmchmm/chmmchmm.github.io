@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<!--
+  薮猫科技（安得卫士 Andsec 客户端）隐私政策页。
+  零外部资源：不引用外部 CSS/JS/字体/图片/CDN，不设 Cookie，无统计脚本。
+  双语：英文在前，中文对照用 class="zh" 紧跟其后。
+  注意：本页描述的是「客户端把数据发往企业自有服务器」这一事实；具体字段以合作方服务端实现为准，上线前需合作方复核。
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>薮猫科技 — Privacy Policy</title>
+<meta name="description" content="Privacy policy for the 薮猫科技 (Andsec) enterprise file-security client. The app transmits account, device, location and file/screen-handling audit data to the enterprise server configured by your own organisation, not to the developer.">
+<style>
+:root{--ink:#101a24;--mut:#5b6b78;--accent:#2f7fb8;--accent-ink:#1b5f8c;--line:#dbe4ea;--bg:#f5f8fa;--zh:#3f515e}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
+.wrap{max-width:820px;margin:0 auto;padding:40px 22px 72px}
+.badge{display:inline-block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-ink);background:#e8f2f9;border:1px solid var(--line);border-radius:999px;padding:6px 14px}
+h1{font-size:30px;line-height:1.25;margin:18px 0 6px}
+h2{font-size:20px;margin:34px 0 8px}
+h2 .zh2{display:block;font-size:15px;font-weight:500;color:var(--zh);margin-top:2px}
+p{margin:10px 0}
+.zh{display:block;color:var(--zh);margin-top:6px}
+.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin:14px 0}
+.accent{border-left:4px solid var(--accent);background:#f2f8fc}
+ul{margin:8px 0 8px 22px;padding:0}
+li{margin:6px 0}
+code{background:#eef3f6;border:1px solid var(--line);border-radius:5px;padding:1px 6px;font-size:14px}
+footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);color:var(--mut);font-size:14px}
+a{color:var(--accent-ink)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<span class="badge">Privacy Policy · 隐私政策</span>
+<h1>薮猫科技 (Andsec)</h1>
+<p style="color:var(--mut)">Effective date / 生效日期：2026-11-19</p>
+
+<div class="card accent">
+<p>This application is an <strong>enterprise file-security client</strong>. It does not operate its own cloud service. All data it collects is transmitted to <strong>the server of the organisation that issued your account</strong>, at an address you (or your administrator) enter inside the app. The developer of this app does not receive, store or sell that data.<span class="zh">本应用是一款<strong>企业文件安全客户端</strong>。它不自建云服务。应用采集的数据全部发送至<strong>为你开通账号的企业自有服务器</strong>（服务器地址由你或管理员在应用内填写）。本应用的开发者不接收、不存储、不出售这些数据。</span></p>
+</div>
+
+<h2>1. Data we process<span class="zh2">一、处理的数据</span></h2>
+<div class="card">
+<ul>
+<li><strong>Account information</strong> — the username and password you enter to sign in. Accounts are created by your organisation's administrator; there is no self-service registration.<span class="zh"><strong>账号信息</strong>——登录时输入的用户名与密码。账号由企业管理员创建，应用内不提供自助注册。</span></li>
+<li><strong>Device information</strong> — device model, OS version, device identifier, network information.<span class="zh"><strong>设备信息</strong>——设备型号、系统版本、设备标识、网络信息。</span></li>
+<li><strong>Location</strong> — the app requests location permission (including background) because file-handling events may be recorded together with location, as configured by your organisation.<span class="zh"><strong>位置信息</strong>——应用申请了定位权限（含后台），用于按企业配置在文件操作事件中一并记录位置。</span></li>
+<li><strong>File and screen-handling audit events</strong> — this is the app's core function: it records and reports audit events about how managed files are handled, including detection of screen capture / screen recording attempts. Event metadata is reported to your organisation's server.<span class="zh"><strong>文件与截屏行为审计信息</strong>——这是本应用的核心功能：记录并上报受管文件的处置审计事件，包括检测截屏 / 录屏行为。事件元数据会上报到企业服务器。</span></li>
+<li><strong>Push notification identifier</strong> — a device push token and the push service registration identifier, used to deliver policy and alert messages.<span class="zh"><strong>推送标识</strong>——设备推送 token 与推送服务注册标识，用于下发策略与告警消息。</span></li>
+<li><strong>Crash and diagnostic logs</strong> — crash reports and runtime diagnostics generated on the device.<span class="zh"><strong>崩溃与诊断日志</strong>——设备生成的崩溃报告与运行诊断信息。</span></li>
+</ul>
+</div>
+
+<h2>2. What the app does not do<span class="zh2">二、本应用不会做的事</span></h2>
+<div class="card">
+<ul>
+<li>It does not contain advertising, and does not sell or share data with advertisers.<span class="zh">不含广告，不向广告商出售或共享数据。</span></li>
+<li>It does not upload your contacts, photos, or calendar.<span class="zh">不上传通讯录、相册或日历。</span></li>
+<li>It does not transmit data to the developer's own servers.<span class="zh">不向开发者自有服务器传输数据。</span></li>
+</ul>
+</div>
+
+<h2>3. Data retention and control<span class="zh2">三、数据留存与控制</span></h2>
+<div class="card">
+<p>Retention, access and deletion of everything listed above are governed by the organisation that issued your account, because the data lives on their server. To exercise any right (access, correction, deletion), contact your organisation's administrator. Signing out of the app stops further reporting from this device.<span class="zh">上述数据的留存、访问与删除由为你开通账号的企业决定，因为数据存放在企业服务器上。行使访问、更正、删除等权利请联系你所在企业的管理员。在应用内退出登录后，本设备将停止上报。</span></p>
+</div>
+
+<h2>4. Children<span class="zh2">四、未成年人</span></h2>
+<div class="card">
+<p>This is a business tool for employees of the subscribing organisation. It is not directed at children and is not intended for use by anyone under 16.<span class="zh">本应用是面向订阅企业员工的企业工具，不面向儿童，不适合 16 岁以下人士使用。</span></p>
+</div>
+
+<h2>5. Contact<span class="zh2">五、联系方式</span></h2>
+<div class="card">
+<p>Developer: Hangzhou Cyberserval Co., Ltd.<br>
+For privacy requests, please contact your organisation's administrator first; for issues about this app build itself, contact <a href="mailto:liangsx.168@gmail.com">liangsx.168@gmail.com</a>.<span class="zh">开发者：杭州薮猫科技有限公司（Hangzhou Cyberserval Co., Ltd.）。隐私请求请先联系你所在企业的管理员；关于本应用构建本身的问题请联系 <a href="mailto:liangsx.168@gmail.com">liangsx.168@gmail.com</a>。</span></p>
+</div>
+
+<footer>
+This page is the privacy policy for the App Store listing of <code>com.cyberserval.andsec</code>.<br>
+本页面是 <code>com.cyberserval.andsec</code> 在 App Store 上架所用的隐私政策。
+</footer>
+
+</div>
+</body>
+</html>
