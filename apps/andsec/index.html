@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!--
+  薮猫科技（Andsec 客户端）支持页 / Support page。
+  零外部资源，无 Cookie、无统计脚本。双语：英文在前，中文用 class="zh" 紧跟。
+  作用：App Store Connect 的 Support URL 指向本页。
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>薮猫科技 — Support</title>
+<meta name="description" content="Support for the 薮猫科技 (Andsec) enterprise file-security client: server address configuration, sign-in problems, and who to contact. 薮猫科技 客户端支持页：服务器地址配置、登录问题与联系方式。">
+<style>
+:root{--ink:#101a24;--mut:#5b6b78;--accent:#2f7fb8;--accent-ink:#1b5f8c;--line:#dbe4ea;--bg:#f5f8fa;--zh:#3f515e}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
+.wrap{max-width:820px;margin:0 auto;padding:40px 22px 72px}
+.badge{display:inline-block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-ink);background:#e8f2f9;border:1px solid var(--line);border-radius:999px;padding:6px 14px}
+h1{font-size:30px;line-height:1.25;margin:18px 0 6px}
+h2{font-size:20px;margin:32px 0 8px}
+h2 .zh2{display:block;font-size:15px;font-weight:500;color:var(--zh);margin-top:2px}
+p{margin:10px 0}
+.zh{display:block;color:var(--zh);margin-top:6px}
+.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin:14px 0}
+.accent{border-left:4px solid var(--accent);background:#f2f8fc}
+ul,ol{margin:8px 0 8px 22px;padding:0}
+li{margin:6px 0}
+code{background:#eef3f6;border:1px solid var(--line);border-radius:5px;padding:1px 6px;font-size:14px}
+footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);color:var(--mut);font-size:14px}
+a{color:var(--accent-ink)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<span class="badge">Support · 支持</span>
+<h1>薮猫科技 (Andsec)</h1>
+<p style="color:var(--mut)">iOS client · <code>com.cyberserval.andsec</code></p>
+
+<div class="card accent">
+<p>This app is issued to you by your own organisation. Most problems are configuration problems on the organisation side, so start there.<span class="zh">本应用由你所在的单位为你开通。多数问题其实是客户侧配置问题，请先按下面的顺序排查。</span></p>
+</div>
+
+<h2>1. Server address format<span class="zh2">一、服务器地址格式</span></h2>
+<div class="card">
+<p>On first launch the app asks for a <strong>server address</strong>. It must be a bare host, optionally with a port. Do <strong>not</strong> include <code>https://</code> or a path.<span class="zh">首次启动时应用要求填写<strong>服务器地址</strong>。只能填主机名，可带端口；<strong>不要</strong>带 <code>https://</code> 前缀，也不要带路径。</span></p>
+<ul>
+<li>OK — <code>secure.example.com</code><span class="zh">可以 —— <code>secure.example.com</code></span></li>
+<li>OK — <code>secure.example.com:8443</code><span class="zh">可以 —— <code>secure.example.com:8443</code></span></li>
+<li>OK — <code>10.20.30.40:8443</code><span class="zh">可以 —— <code>10.20.30.40:8443</code></span></li>
+<li>Rejected — <code>https://secure.example.com:8443</code><span class="zh">会被拒绝 —— <code>https://secure.example.com:8443</code></span></li>
+</ul>
+<p>Changing the address logs you out and returns you to the sign-in screen.<span class="zh">修改服务器地址会退出登录并回到登录页。</span></p>
+</div>
+
+<h2>2. Sign-in problems<span class="zh2">二、登录问题</span></h2>
+<div class="card">
+<ol>
+<li>Confirm the server address with your administrator.<span class="zh">先与管理员确认服务器地址。</span></li>
+<li>Confirm your account exists and is not disabled — accounts are created by your administrator, the app has no self-registration.<span class="zh">确认账号已创建且未被停用——账号由管理员创建，应用内无法自助注册。</span></li>
+<li>If the app cannot reach the server, check that the device is on the required network (VPN / corporate Wi-Fi).<span class="zh">如果连不上服务器，确认设备处于所需网络（VPN / 单位 Wi-Fi）。</span></li>
+</ol>
+</div>
+
+<h2>3. Notifications permission<span class="zh2">三、通知权限</span></h2>
+<div class="card">
+<p>The app requests notification permission so that policy changes and alerts can reach you. You can change this later in iOS <em>Settings → 薮猫科技 → Notifications</em>. Denying it does not stop the app from working.<span class="zh">应用申请通知权限，以便策略变更与告警能及时送达。之后可在 iOS「设置 → 薮猫科技 → 通知」中修改。拒绝通知不影响使用。</span></p>
+</div>
+
+<h2>4. Contact<span class="zh2">四、联系我们</span></h2>
+<div class="card">
+<p>Developer: Hangzhou Cyberserval Co., Ltd.<br>
+Email: <a href="mailto:liangsx.168@gmail.com">liangsx.168@gmail.com</a><br>
+Privacy Policy: <a href="./privacy/">chmmchmm.github.io/apps/andsec/privacy/</a><span class="zh">开发者：杭州薮猫科技有限公司（Hangzhou Cyberserval Co., Ltd.）。邮箱：<a href="mailto:liangsx.168@gmail.com">liangsx.168@gmail.com</a>。隐私政策：<a href="./privacy/">chmmchmm.github.io/apps/andsec/privacy/</a></span></p>
+</div>
+
+<footer>
+Support URL for the App Store listing of <code>com.cyberserval.andsec</code>.<br>
+本页是 <code>com.cyberserval.andsec</code> 在 App Store 上架所用的支持 URL。
+</footer>
+
+</div>
+</body>
+</html>
